@@ -1,0 +1,917 @@
+{
+	"info": {
+		"_postman_id": "8ea92edf-bfab-46b7-8eb4-47387360967f",
+		"name": "note_scheduler_golang",
+		"description": "{base_url} : [http://localhost:8080](http://localhost:8080)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16771974"
+	},
+	"item": [
+		{
+			"name": "scheduler",
+			"item": [
+				{
+					"name": "store",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"judul\" : \"Laboris\",\r\n    \"start_at\" : \"2022-06-01 07:00:00\",\r\n    \"end_at\" : \"2022-06-02 07:00:00\",\r\n    \"activities\": [\r\n        {\r\n            \"activity\": \"Laboris commodo culpa culpa laboris\"\r\n        },\r\n        {\r\n            \"activity\": \"Laboris commodo culpa culpa laboris 2\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_golang}}/schedulers",
+							"host": [
+								"{{base_url_golang}}"
+							],
+							"path": [
+								"schedulers"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "store",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"judul\" : \"Laboris\",\r\n    \"start_at\" : \"2022-06-01 07:00:00\",\r\n    \"end_at\" : \"2022-06-02 07:00:00\",\r\n    \"activities\": [\r\n        {\r\n            \"activity\": \"Laboris commodo culpa culpa laboris\"\r\n        },\r\n        {\r\n            \"activity\": \"Laboris commodo culpa culpa laboris 2\"\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "/schedulers",
+									"path": [
+										"schedulers"
+									]
+								}
+							},
+							"status": "Accepted",
+							"code": 202,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 30 Sep 2022 15:07:50 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "277"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"data\": {\n        \"id\": 3,\n        \"start_at\": \"2022-06-01T07:00:00Z\",\n        \"end_at\": \"2022-06-02T07:00:00Z\",\n        \"judul\": \"Laboris\",\n        \"activities\": [\n            {\n                \"id\": 3,\n                \"activity\": \"Laboris commodo culpa culpa laboris\",\n                \"schedule_id\": 3\n            },\n            {\n                \"id\": 4,\n                \"activity\": \"Laboris commodo culpa culpa laboris 2\",\n                \"schedule_id\": 3\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "get semua schedule",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{base_url_golang}}/schedulers",
+							"host": [
+								"{{base_url_golang}}"
+							],
+							"path": [
+								"schedulers"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "get semua schedule",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{base_url_golang}}/schedulers",
+									"host": [
+										"{{base_url_golang}}"
+									],
+									"path": [
+										"schedulers"
+									]
+								}
+							},
+							"status": "Accepted",
+							"code": 202,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 30 Sep 2022 14:57:58 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "198"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"data\": [\n        {\n            \"id\": 2,\n            \"start_at\": \"2022-06-01T07:00:00+07:00\",\n            \"end_at\": \"2022-06-03T06:59:59+07:00\",\n            \"judul\": \"Fitness\",\n            \"activities\": [\n                {\n                    \"id\": 2,\n                    \"activity\": \"coba kita test yakan\",\n                    \"schedule_id\": 2\n                }\n            ]\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "get by judul",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_golang}}/schedulers?judul=Fitness",
+							"host": [
+								"{{base_url_golang}}"
+							],
+							"path": [
+								"schedulers"
+							],
+							"query": [
+								{
+									"key": "judul",
+									"value": "Fitness"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "get by judul",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url_golang}}/schedulers?judul=Fitness",
+									"host": [
+										"{{base_url_golang}}"
+									],
+									"path": [
+										"schedulers"
+									],
+									"query": [
+										{
+											"key": "judul",
+											"value": "Fitness"
+										}
+									]
+								}
+							},
+							"status": "Accepted",
+							"code": 202,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 30 Sep 2022 15:06:18 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "198"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"data\": [\n        {\n            \"id\": 2,\n            \"start_at\": \"2022-06-01T07:00:00+07:00\",\n            \"end_at\": \"2022-06-03T06:59:59+07:00\",\n            \"judul\": \"Fitness\",\n            \"activities\": [\n                {\n                    \"id\": 2,\n                    \"activity\": \"coba kita test yakan\",\n                    \"schedule_id\": 2\n                }\n            ]\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_golang}}/schedulers/delete/3",
+							"host": [
+								"{{base_url_golang}}"
+							],
+							"path": [
+								"schedulers",
+								"delete",
+								"3"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "delete",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base_url_golang}}/schedulers/delete/3",
+									"host": [
+										"{{base_url_golang}}"
+									],
+									"path": [
+										"schedulers",
+										"delete",
+										"3"
+									]
+								}
+							},
+							"status": "Accepted",
+							"code": 202,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 30 Sep 2022 15:10:34 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "287"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"data\": {\n        \"id\": 3,\n        \"start_at\": \"2022-06-01T14:00:00+07:00\",\n        \"end_at\": \"2022-06-02T14:00:00+07:00\",\n        \"judul\": \"Laboris\",\n        \"activities\": [\n            {\n                \"id\": 3,\n                \"activity\": \"Laboris commodo culpa culpa laboris\",\n                \"schedule_id\": 3\n            },\n            {\n                \"id\": 4,\n                \"activity\": \"Laboris commodo culpa culpa laboris 2\",\n                \"schedule_id\": 3\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "ongoing",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "from",
+									"value": "2022-06-01 07:00:00",
+									"type": "text"
+								},
+								{
+									"key": "to",
+									"value": "2022-06-05 07:00:00",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url_golang}}/schedulers/ongoing",
+							"host": [
+								"{{base_url_golang}}"
+							],
+							"path": [
+								"schedulers",
+								"ongoing"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "ongoing",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "from",
+											"value": "2022-06-01 07:00:00",
+											"type": "text"
+										},
+										{
+											"key": "to",
+											"value": "2022-06-05 07:00:00",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url_golang}}/schedulers/ongoing",
+									"host": [
+										"{{base_url_golang}}"
+									],
+									"path": [
+										"schedulers",
+										"ongoing"
+									]
+								}
+							},
+							"status": "Accepted",
+							"code": 202,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 01 Oct 2022 00:57:18 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "270"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"data\": [\n        {\n            \"id\": 2,\n            \"start_at\": \"2022-06-01T07:00:00+07:00\",\n            \"end_at\": \"2022-06-03T06:59:59+07:00\",\n            \"judul\": \"Yang ini baru saja di update lagi 1\",\n            \"activities\": [\n                {\n                    \"id\": 2,\n                    \"activity\": \"Joging 12 KM\",\n                    \"schedule_id\": 2\n                },\n                {\n                    \"id\": 8,\n                    \"activity\": \"Plank 3 Menit\",\n                    \"schedule_id\": 2\n                }\n            ]\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "update",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "_method",
+									"value": "PUT",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "judul",
+									"value": "Yang ini baru saja di update lagi 1",
+									"type": "text"
+								},
+								{
+									"key": "start_at",
+									"value": "2022-06-01 00:00:00",
+									"type": "text"
+								},
+								{
+									"key": "end_at",
+									"value": "2022-06-02 23:59:59",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url_golang}}/schedulers/update/2",
+							"host": [
+								"{{base_url_golang}}"
+							],
+							"path": [
+								"schedulers",
+								"update",
+								"2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "update golang",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "_method",
+											"value": "PUT",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "judul",
+											"value": "Yang ini baru saja di update lagi 1",
+											"type": "text"
+										},
+										{
+											"key": "start_at",
+											"value": "2022-06-01 00:00:00",
+											"type": "text"
+										},
+										{
+											"key": "end_at",
+											"value": "2022-06-02 23:59:59",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url_golang}}/schedulers/update/2",
+									"host": [
+										"{{base_url_golang}}"
+									],
+									"path": [
+										"schedulers",
+										"update",
+										"2"
+									]
+								}
+							},
+							"status": "Accepted",
+							"code": 202,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 30 Sep 2022 15:27:03 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "224"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"data\": {\n        \"id\": 2,\n        \"start_at\": \"2022-06-01T07:00:00+07:00\",\n        \"end_at\": \"2022-06-03T06:59:59+07:00\",\n        \"judul\": \"Yang ini baru saja di update lagi 1\",\n        \"activities\": [\n            {\n                \"id\": 2,\n                \"activity\": \"coba kita test yakan\",\n                \"schedule_id\": 2\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "show",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_golang}}/schedulers/show/2",
+							"host": [
+								"{{base_url_golang}}"
+							],
+							"path": [
+								"schedulers",
+								"show",
+								"2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "show",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url_golang}}/schedulers/show/2",
+									"host": [
+										"{{base_url_golang}}"
+									],
+									"path": [
+										"schedulers",
+										"show",
+										"2"
+									]
+								}
+							},
+							"status": "Accepted",
+							"code": 202,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 29 Sep 2022 13:06:21 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "247"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"detail Schedule by id\",\n    \"errors\": null,\n    \"data\": {\n        \"id\": 2,\n        \"start_at\": \"2022-06-01T07:00:00+07:00\",\n        \"end_at\": \"2022-06-03T06:59:59+07:00\",\n        \"judul\": \"Fitness\",\n        \"activities\": [\n            {\n                \"id\": 2,\n                \"activity\": \"coba kita test yakan\",\n                \"schedule_id\": 2\n            }\n        ]\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Activity",
+			"item": [
+				{
+					"name": "store activity to schedule",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "activity",
+									"value": "Plank 3 Menit",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url_golang}}/activities/store/2",
+							"host": [
+								"{{base_url_golang}}"
+							],
+							"path": [
+								"activities",
+								"store",
+								"2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "store activity to schedule",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "activity",
+											"value": "Joging Plank 3 Menit",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url_golang}}/activities/store/2",
+									"host": [
+										"{{base_url_golang}}"
+									],
+									"path": [
+										"activities",
+										"store",
+										"2"
+									]
+								}
+							},
+							"status": "Accepted",
+							"code": 202,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 30 Sep 2022 15:36:45 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "283"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"data\": {\n        \"id\": 2,\n        \"start_at\": \"2022-06-01T07:00:00+07:00\",\n        \"end_at\": \"2022-06-03T06:59:59+07:00\",\n        \"judul\": \"Yang ini baru saja di update lagi 1\",\n        \"activities\": [\n            {\n                \"id\": 2,\n                \"activity\": \"coba kita test yakan\",\n                \"schedule_id\": 2\n            },\n            {\n                \"id\": 5,\n                \"activity\": \"Joging Plank 3 Menit\",\n                \"schedule_id\": 2\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "show",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_golang}}/activities/show/2",
+							"host": [
+								"{{base_url_golang}}"
+							],
+							"path": [
+								"activities",
+								"show",
+								"2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "show",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url_golang}}/activities/show/2",
+									"host": [
+										"{{base_url_golang}}"
+									],
+									"path": [
+										"activities",
+										"show",
+										"2"
+									]
+								}
+							},
+							"status": "Accepted",
+							"code": 202,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 01 Oct 2022 00:44:24 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "70"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"data\": {\n        \"id\": 2,\n        \"activity\": \"Joging 12 KM\",\n        \"schedule_id\": 2\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_golang}}/activities/delete/7",
+							"host": [
+								"{{base_url_golang}}"
+							],
+							"path": [
+								"activities",
+								"delete",
+								"7"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "delete",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base_url_golang}}/activities/delete/7",
+									"host": [
+										"{{base_url_golang}}"
+									],
+									"path": [
+										"activities",
+										"delete",
+										"7"
+									]
+								}
+							},
+							"status": "Accepted",
+							"code": 202,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 01 Oct 2022 00:31:00 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "224"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"data\": {\n        \"id\": 2,\n        \"start_at\": \"2022-06-01T07:00:00+07:00\",\n        \"end_at\": \"2022-06-03T06:59:59+07:00\",\n        \"judul\": \"Yang ini baru saja di update lagi 1\",\n        \"activities\": [\n            {\n                \"id\": 2,\n                \"activity\": \"coba kita test yakan\",\n                \"schedule_id\": 2\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "update golang",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "activity",
+									"value": "Joging 12 KM",
+									"type": "text"
+								},
+								{
+									"key": "schedule_id",
+									"value": "2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url_golang}}/activities/update/2",
+							"host": [
+								"{{base_url_golang}}"
+							],
+							"path": [
+								"activities",
+								"update",
+								"2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "update golang",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "activity",
+											"value": "Joging 12 KM",
+											"type": "text"
+										},
+										{
+											"key": "schedule_id",
+											"value": "2",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url_golang}}/activities/update/2",
+									"host": [
+										"{{base_url_golang}}"
+									],
+									"path": [
+										"activities",
+										"update",
+										"2"
+									]
+								}
+							},
+							"status": "Accepted",
+							"code": 202,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 01 Oct 2022 00:42:19 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "216"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"data\": {\n        \"id\": 2,\n        \"start_at\": \"2022-06-01T07:00:00+07:00\",\n        \"end_at\": \"2022-06-03T06:59:59+07:00\",\n        \"judul\": \"Yang ini baru saja di update lagi 1\",\n        \"activities\": [\n            {\n                \"id\": 2,\n                \"activity\": \"Joging 12 KM\",\n                \"schedule_id\": 2\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "get activity by schedule id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_golang}}/activities/by-shedule/2",
+							"host": [
+								"{{base_url_golang}}"
+							],
+							"path": [
+								"activities",
+								"by-shedule",
+								"2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "get activity by schedule id",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url_golang}}/activities/by-shedule/2",
+									"host": [
+										"{{base_url_golang}}"
+									],
+									"path": [
+										"activities",
+										"by-shedule",
+										"2"
+									]
+								}
+							},
+							"status": "Accepted",
+							"code": 202,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 29 Sep 2022 13:20:17 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "131"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"detail Activity by id\",\n    \"errors\": null,\n    \"data\": [\n        {\n            \"id\": 2,\n            \"activity\": \"coba kita test yakan\",\n            \"schedule_id\": 2\n        }\n    ]\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}
